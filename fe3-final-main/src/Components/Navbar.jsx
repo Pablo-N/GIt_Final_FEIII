@@ -7,12 +7,15 @@ import {Link} from "react-router-dom"
 const Navbar = () => {
 
   return (
+    <header>
+      
     <nav>
-      <Link to="/home">Home</Link>
-      <Link to="/dentist">Dentist</Link>
+      <Link to="/home">Home</Link>      
       <Link to="/contact">Contact</Link>
+      <Link to="/Favs">Favs</Link>
       <button>Change theme</button>
     </nav>
+    </header>
   )
 }
 
