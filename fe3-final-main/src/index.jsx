@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './index.css';
+import './styles/main.css';
 import App from './App';
 import Home from './Routes/Home'
 import Contact from "./Routes/Contact"
 import Favs from "./Routes/Favs"
 import Detail from "./Routes/Detail"
+import {ContextProvider} from "./Components/utils/global.context"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ContextProvider>
+  <React.StrictMode>    
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />} >
@@ -21,8 +21,7 @@ root.render(
             <Route path="/favs" element={<Favs />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </ContextProvider>
+      </BrowserRouter>  
 
   </React.StrictMode>
 );

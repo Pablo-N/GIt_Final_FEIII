@@ -3,31 +3,35 @@ import { createContext, useReducer } from "react";
 export const initialState = {theme: "", data: []}
 
 export const ContextGlobal = createContext(undefined);
-
+/*
 export const ContextProvider = ({ children }) => {
+  const [theme, setTheme] = useReducer(togglerReducer, {type:"light", payload:"dark"})
+  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+
+const action= {type:theme, payload:"dark"}
 
 
+  const togglerReducer (theme, action){
 
-  const ThemeToggler = (setTheme, action)=>{
-    if (theme === 'light') {
-      setCurrentTheme('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      setCurrentTheme('light')
-      localStorage.setItem('theme', 'light')
+    switch(action.type){
+      case action.type==="dark":
+        action.type= "light";
+        break;
+      case action.type=== "light":
+        action.type= "dark"
+      break;
     }
   }
 
-  const [theme, setTheme] = useReducer(ThemeToggler, {themeType:"Light"})
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+  
 
   return (
-    <ContextGlobal.Provider value={{}}>
+    <ContextGlobal.Provider value={{togglerReducer, theme}}>
       {children}
     </ContextGlobal.Provider>
   );
 };
-
+*/
 
 /*
 
