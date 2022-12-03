@@ -15,7 +15,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index path="/home" element={<Home />} />
-          <Route index path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/dentist/:id" element={<Detail />} />
           <Route path="/favs" element={<Favs />} />
         </Route>
