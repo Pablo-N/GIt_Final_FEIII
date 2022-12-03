@@ -1,0 +1,26 @@
+.navigation {
+  //   background-color: $color-tertiary-light;
+  //   border-color: red($color: #000000);
+  width: 100vw;
+  height: 50vh;
+  font-size: $nav-font-size;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-tertiary-light, 0.8),
+      rgba($color-tertiary-dark, 0.8)
+    ),
+    url("../images/Dentist.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  //   position: relative;
+
+  &__container {
+    display: flex;
+    width: inherit;
+    height: inherit;
+    align-items: center;
+    justify-content: space-around;
+  }
+}

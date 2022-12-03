@@ -29,3 +29,15 @@ html {
 body {
   box-sizing: border-box;
 }
+
+//Delete later
+
+.theme--dark {
+  background-color: $color-grey-dark-3;
+  color: $color-white;
+}
+
+.theme--light {
+  background-color: $color-white;
+  color: $color-black;
+}
