@@ -19,22 +19,29 @@ const Card = ({ dentist }) => {
         <div className="card__details">
           <ul>
             {/* <li><img src="../images/doctor.jpg"/></li> */}
-            <li>Name: {name}</li>
-            <li>Username:{username} </li>
+            <li>
+              {" "}
+              {<b>Name:</b>} {name}
+            </li>
+            <li>
+              {" "}
+              {<b>Username:</b>} {username}{" "}
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="card__side card__side--back card__side--back-3">
         <div className="card__cta">
-          <div className="card__price-box">
-            <p className="card__price-only">Only</p>
-            <p className="card__price-only">{name}</p>
+          <div className="card__dentist-box">
+            <p className="card__dentist-name">{name}</p>
+            <button className="card__dentist-favButton">{"⭐"}</button>
+            <FontAwesomeIcon icon="fa-light fa-star" />
           </div>
-          <a href="#popup" className="btn btn--white">
+          <a href="#popup" className="btn btn--white card__btn">
             Book now!
           </a>
-          <a href="#popup" className="btn btn--white">
+          <a href="#popup" className="btn btn--white card__btn">
             Show more details
           </a>
         </div>

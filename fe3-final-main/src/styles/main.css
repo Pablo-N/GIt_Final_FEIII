@@ -373,17 +373,27 @@ body {
   width: 90%;
   text-align: center;
 }
-.card__price-box {
+.card__dentist-box {
   color: #fff;
   margin-bottom: 8rem;
 }
-.card__price-only {
-  font-size: 1rem;
+.card__dentist-name {
+  font-size: 1.8rem;
   text-transform: uppercase;
 }
-.card__price-value {
+.card__dentist-favButton {
   font-size: 6rem;
   font-weight: 100;
+  margin-top: 5rem;
+  background-color: #fff;
+  border-radius: 20%;
+}
+.card__dentist-favButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.card__btn {
+  margin: 2rem;
 }
 
 .cardContainer {

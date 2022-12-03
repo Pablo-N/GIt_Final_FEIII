@@ -161,17 +161,29 @@
     width: 90%;
     text-align: center;
   }
-  &__price-box {
+  &__dentist-box {
     // text-align: center;
     color: $color-white;
     margin-bottom: 8rem;
   }
-  &__price-only {
-    font-size: 1rem;
+  &__dentist-name {
+    font-size: 1.8rem;
     text-transform: uppercase;
   }
-  &__price-value {
+  &__dentist-favButton {
     font-size: 6rem;
     font-weight: 100;
+    margin-top: 5rem;
+    background-color: $color-white;
+    border-radius: 20%;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+  }
+
+  &__btn {
+    margin: 2rem;
   }
 }
