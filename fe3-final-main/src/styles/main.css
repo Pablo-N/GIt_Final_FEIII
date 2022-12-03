@@ -385,12 +385,17 @@ body {
   font-size: 6rem;
   font-weight: 100;
   margin-top: 5rem;
-  background-color: #fff;
+  background-color: #999;
   border-radius: 20%;
+  color: #fff;
 }
 .card__dentist-favButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.card__dentist-favButton:active {
+  background-color: #fff;
+  color: #ffb900;
 }
 .card__btn {
   margin: 2rem;

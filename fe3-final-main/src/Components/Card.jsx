@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
@@ -35,8 +37,9 @@ const Card = ({ dentist }) => {
         <div className="card__cta">
           <div className="card__dentist-box">
             <p className="card__dentist-name">{name}</p>
-            <button className="card__dentist-favButton">{"⭐"}</button>
-            <FontAwesomeIcon icon="fa-light fa-star" />
+            <button className="card__dentist-favButton">
+              {<FontAwesomeIcon icon={faStar} />}
+            </button>
           </div>
           <a href="#popup" className="btn btn--white card__btn">
             Book now!

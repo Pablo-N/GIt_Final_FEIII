@@ -174,12 +174,18 @@
     font-size: 6rem;
     font-weight: 100;
     margin-top: 5rem;
-    background-color: $color-white;
+    background-color: $color-grey-dark-2;
     border-radius: 20%;
+    color: $color-white;
 
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    }
+
+    &:active {
+      background-color: $color-white;
+      color: $color-secondary-light;
     }
   }
 
