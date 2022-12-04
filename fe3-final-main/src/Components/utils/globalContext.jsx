@@ -22,7 +22,7 @@ export const GlobalContext = (props) => {
       className={themeState}
       value={{ switchTheme, themeState }}
     >
-      {props.children}
+      <div className={themeState}>{props.children}</div>
     </ThemeContext.Provider>
   );
 };

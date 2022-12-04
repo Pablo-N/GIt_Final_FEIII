@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { ThemeContext } from "./utils/globalContext";
 
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
+  const { themeState } = useContext(ThemeContext);
+
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
   };
@@ -11,7 +14,7 @@ const Card = ({ dentist }) => {
   return (
     <div key={id} className="card">
       {/* En cada card deberan mostrar en name - username y el id */}
-      <div className="card__side card__side--front">
+      <div className={`card__side card__side--front ${themeState}`}>
         <div className="card__picture card__picture--3">&nbsp;</div>
         <h4 className="card__heading">
           <span className="card__heading-span card__heading-span--3">

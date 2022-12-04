@@ -8,15 +8,13 @@ function App(props) {
   const { themeState } = useContext(ThemeContext);
   console.log("Desde App:", themeState);
   return (
-    <>
-      <GlobalContext className={themeState}>
-        <Navbar />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
-      </GlobalContext>
-    </>
+    <GlobalContext>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </GlobalContext>
   );
 }
 
