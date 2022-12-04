@@ -14,7 +14,13 @@ const Card = ({ dentist }) => {
   return (
     <div key={id} className="card">
       {/* En cada card deberan mostrar en name - username y el id */}
-      <div className={`card__side card__side--front ${themeState}`}>
+      <div
+        className={
+          themeState === "theme--dark"
+            ? `card__side card__side--frontDark`
+            : `card__side card__side--front`
+        }
+      >
         <div className="card__picture card__picture--3">&nbsp;</div>
         <h4 className="card__heading">
           <span className="card__heading-span card__heading-span--3">

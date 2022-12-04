@@ -17,7 +17,6 @@ const Navbar = () => {
   return (
     <header className="navigation">
       <nav className="navigation__container">
-        <h1>{`${themeState}`}</h1>
         <Link to="/home">Home</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/Favs">Favs</Link>
