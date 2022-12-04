@@ -177,6 +177,18 @@
     background-color: $color-grey-dark-2;
     border-radius: 20%;
     color: $color-white;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
 
     &:hover {
       transform: translateY(-3px);
@@ -184,7 +196,7 @@
     }
 
     &:active {
-      background-color: $color-white;
+      background-color: $color-secondary-light;
       color: $color-secondary-light;
     }
   }

@@ -1,0 +1,11 @@
+.theme {
+  &--dark {
+    background-color: $color-grey-dark-3;
+    color: $color-white;
+  }
+
+  &--light {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}

@@ -1,9 +1,15 @@
 @import "./abstracts/mixins";
 @import "./abstracts/variables";
+
 @import "./base/animations";
 @import "./base/base";
 @import "./base/typography";
+
 @import "./components/button";
 @import "./components/card";
 @import "./components/navbar";
+
+@import "./layout/footer";
 @import "./layout/grid";
+
+@import "./Themes/darkMode";

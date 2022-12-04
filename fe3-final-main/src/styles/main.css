@@ -277,6 +277,63 @@ body {
   transform: translateY(0);
 }
 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch__sun {
+  font-size: 2.5rem;
+  color: #ffb900;
+  position: absolute;
+  top: 20%;
+  transform: translateX(-150%);
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.switch__slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+.switch__slider.round {
+  border-radius: 34px;
+}
+.switch__slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .switch__slider {
+  background-color: #2196f3;
+}
+
+input:focus + .switch__slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .switch__slider:before {
+  transform: translateX(26px);
+}
+
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -398,13 +455,15 @@ body {
   background-color: #999;
   border-radius: 20%;
   color: #fff;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+          clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 .card__dentist-favButton:hover {
   transform: translateY(-3px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .card__dentist-favButton:active {
-  background-color: #fff;
+  background-color: #ffb900;
   color: #ffb900;
 }
 .card__btn {
@@ -428,6 +487,27 @@ body {
   justify-content: space-around;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  bottom: 0;
+  width: 90vw;
+  height: 20rem;
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+footer img {
+  width: 35%;
+  margin: 0;
+}
+footer p {
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
 .cardContainer {
   display: grid;
   gap: 6rem;
@@ -435,4 +515,13 @@ body {
   grid-auto-rows: 60rem;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 2fr));
   padding: 6rem;
+}
+
+.theme--dark {
+  background-color: #333;
+  color: #fff;
+}
+.theme--light {
+  background-color: #fff;
+  color: #000;
 }/*# sourceMappingURL=main.css.map */
