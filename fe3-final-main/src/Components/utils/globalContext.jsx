@@ -1,8 +1,31 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 
-export const initialState = { theme: "", data: [] };
+export const initialTheme = "theme--light";
+export const ThemeContext = createContext(initialTheme);
 
-export const ContextGlobal = createContext(undefined);
+export const GlobalContext = (props) => {
+  const [themeState, setThemeState] = useState("theme--light");
+
+  const switchTheme = () => {
+    if (themeState === "theme--light") {
+      const newThemeState = "theme--dark";
+      setThemeState(newThemeState);
+    }
+    if (themeState === "theme--dark") {
+      const newThemeState = "theme--light";
+      setThemeState(newThemeState);
+    }
+  };
+
+  return (
+    <ThemeContext.Provider
+      className={themeState}
+      value={{ switchTheme, themeState }}
+    >
+      {props.children}
+    </ThemeContext.Provider>
+  );
+};
 
 /*
 export const ContextProvider = ({ children }) => {
@@ -68,4 +91,35 @@ export const TheBag = () => {
     [{ id: 100, value: 'manzana' }], //valor inicial
     init //funcion que calcula el valor inicial
   )
+*/
+
+/* 
+NOT WORKING
+  // const initialReducerValue = {
+  //   isDark: false,
+  //   theme: "theme--light",
+  // };
+
+  // const reducerTheme = (state = initialReducerValue, action) => {
+  //   console.log("ValorEntrada: " + state);
+  //   if (action.type === "theme") {
+  //     const newState = {
+  //       isDark: state.isDark,
+  //       theme: state.isDark ? "theme--dark" : "theme--light",
+  //     };
+  //     console.log("ValorSalida: " + newState);
+  //     return newState;
+  //   }
+  // };
+
+  // const [themeState, themeDispatcher] = useReducer(
+  //   reducerTheme,
+  //   initialReducerValue
+  // );
+
+  // const switchTheme = () => {
+  //   return themeDispatcher({ type: "theme" });
+  // };
+
+  // const changeTrue = "HI AND WORK";
 */
