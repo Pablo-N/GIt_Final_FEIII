@@ -23,7 +23,7 @@ const Navbar = () => {
         <label className="switch">
           <input onClick={changeTheme} type="checkbox" />
           <span className="switch__slider round">
-            {isDarkMode === "theme--light" ? (
+            {theme === "theme--light" ? (
               <FontAwesomeIcon className="switch__sun" icon={faSun} />
             ) : (
               <FontAwesomeIcon className="switch__sun" icon={faMoon} />
