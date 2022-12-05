@@ -24,7 +24,7 @@ const Home = () => {
       <h1>Home</h1>
       <div className="cardContainer">
         {dentists.map((dentist) => (
-          <Card dentist={dentist} />
+          <Card key={dentist.id} dentist={dentist} />
         ))}
       </div>
     </main>

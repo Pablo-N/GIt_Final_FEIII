@@ -6,7 +6,6 @@ import { GlobalContext, ThemeContext } from "./Components/utils/globalContext";
 
 function App(props) {
   const { themeState } = useContext(ThemeContext);
-  console.log("Desde App:", themeState);
   return (
     <GlobalContext>
       <Navbar />

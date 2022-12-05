@@ -1,22 +1,33 @@
 import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "./utils/globalContext";
+import {
+  isFavorited,
+  removeFavInStorage,
+  setFavInStorage,
+} from "./utils/localStorageHandle";
 
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
-  const { themeState } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    setFavInStorage({ name, username, id });
   };
 
+  const removeFav = () => {
+    removeFavInStorage(id);
+  };
+
+  const favorite = isFavorited(id);
+
   return (
-    <div key={id} className="card">
+    <div className="card">
       {/* En cada card deberan mostrar en name - username y el id */}
       <div
         className={
-          themeState === "theme--dark"
+          theme === "theme--dark"
             ? `card__side card__side--frontDark`
             : `card__side card__side--front`
         }
@@ -46,8 +57,19 @@ const Card = ({ dentist }) => {
         <div className="card__cta">
           <div className="card__dentist-box">
             <p className="card__dentist-name">{name}</p>
-            <button className="card__dentist-favButton">
-              {<FontAwesomeIcon icon={faStar} />}
+            <button
+              className={
+                favorite
+                  ? `card__dentist-favButton card__dentist-favButton--Nofav`
+                  : "card__dentist-favButton card__dentist-favButton--fav"
+              }
+              onClick={favorite ? removeFav : addFav}
+            >
+              {favorite ? (
+                <FontAwesomeIcon icon={faXmark} />
+              ) : (
+                <FontAwesomeIcon icon={faStar} />
+              )}
             </button>
           </div>
           <a href="#popup" className="btn btn--white card__btn">

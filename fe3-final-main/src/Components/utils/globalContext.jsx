@@ -1,10 +1,70 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useMemo, useReducer } from "react";
 
-export const initialTheme = "theme--light";
+export const initialTheme = { theme: "theme--light", data: [] };
 export const ThemeContext = createContext(initialTheme);
 
 export const GlobalContext = (props) => {
-  const [themeState, setThemeState] = useState("theme--light");
+  const initialTheme = { theme: "theme--light", data: [] };
+
+  const actions = {
+    THEME__LIGHT: "theme--light",
+    THEME__DARK: "theme--dark",
+    DATA: "data",
+  };
+
+  const themeReducer = (state, action) => {
+    switch (action.type) {
+      case actions.THEME__LIGHT:
+        return { ...state, theme: "theme--light" };
+      case actions.THEME__DARK:
+        return { ...state, theme: "theme--dark" };
+      case actions.DATA:
+        return { ...state, data: action.payload };
+      default: {
+        return state;
+      }
+    }
+  };
+
+  const [themeState, themeDispacher] = useReducer(themeReducer, initialTheme);
+
+  const providerState = useMemo(
+    () => ({
+      data: themeState.data,
+      theme: themeState.theme,
+
+      setLightTheme: () => {
+        themeDispacher({ type: actions.THEME__LIGHT });
+      },
+
+      setDarkTheme: () => {
+        themeDispacher({ type: actions.THEME__DARK });
+      },
+
+      // switchTheme: () => {
+      //   if (themeState.theme === "them--dark") {
+      //     themeDispacher({ type: actions.THEME__LIGHT });
+      //   }
+      //   if (themeState.theme === "them--light") {
+      //     themeDispacher({ type: actions.THEME__DARK });
+      //   }
+      // },
+
+      setData: (array) => {
+        themeDispacher({ type: actions.DATA, payload: array });
+      },
+    }),
+    [themeState, themeDispacher]
+  );
+
+  return (
+    <ThemeContext.Provider className={themeState.theme} value={providerState}>
+      <div className={themeState.theme}>{props.children}</div>
+    </ThemeContext.Provider>
+  );
+};
+
+/*   const [themeState, setThemeState] = useState("theme--light");
 
   const switchTheme = () => {
     if (themeState === "theme--light") {
@@ -15,111 +75,4 @@ export const GlobalContext = (props) => {
       const newThemeState = "theme--light";
       setThemeState(newThemeState);
     }
-  };
-
-  return (
-    <ThemeContext.Provider
-      className={themeState}
-      value={{ switchTheme, themeState }}
-    >
-      <div className={themeState}>{props.children}</div>
-    </ThemeContext.Provider>
-  );
-};
-
-/*
-export const ContextProvider = ({ children }) => {
-  const [theme, setTheme] = useReducer(togglerReducer, {type:"light", payload:"dark"})
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
-
-const action= {type:theme, payload:"dark"}
-
-
-  const togglerReducer (theme, action){
-
-    switch(action.type){
-      case action.type==="dark":
-        action.type= "light";
-        break;
-      case action.type=== "light":
-        action.type= "dark"
-      break;
-    }
-  }
-
-  
-
-  return (
-    <ContextGlobal.Provider value={{togglerReducer, theme}}>
-      {children}
-    </ContextGlobal.Provider>
-  );
-};
-*/
-
-/*
-
-  const [currentTheme, setCurrentTheme] = React.useState(
-    localStorage.getItem('theme') || 'dark'
-  )
-
-  const toggleTheme = () => {
-    if (currentTheme === 'light') {
-      setCurrentTheme('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      setCurrentTheme('light')
-      localStorage.setItem('theme', 'light')
-    }
-  }
-
-  return (
-    <div className={currentTheme}>
-      <h1>Local Storage</h1>
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      <TheBag />
-    </div>
-  )
-
-*/
-
-/*
-export const TheBag = () => {
-  const [value, setValue] = React.useState('')
-  const [bag, dispatchBag] = React.useReducer(
-    bagReducer, //funcion que se ejecuta cuando se hace un dispatch, retorna el nuevo estado
-    [{ id: 100, value: 'manzana' }], //valor inicial
-    init //funcion que calcula el valor inicial
-  )
-*/
-
-/* 
-NOT WORKING
-  // const initialReducerValue = {
-  //   isDark: false,
-  //   theme: "theme--light",
-  // };
-
-  // const reducerTheme = (state = initialReducerValue, action) => {
-  //   console.log("ValorEntrada: " + state);
-  //   if (action.type === "theme") {
-  //     const newState = {
-  //       isDark: state.isDark,
-  //       theme: state.isDark ? "theme--dark" : "theme--light",
-  //     };
-  //     console.log("ValorSalida: " + newState);
-  //     return newState;
-  //   }
-  // };
-
-  // const [themeState, themeDispatcher] = useReducer(
-  //   reducerTheme,
-  //   initialReducerValue
-  // );
-
-  // const switchTheme = () => {
-  //   return themeDispatcher({ type: "theme" });
-  // };
-
-  // const changeTrue = "HI AND WORK";
-*/
+  }; */
