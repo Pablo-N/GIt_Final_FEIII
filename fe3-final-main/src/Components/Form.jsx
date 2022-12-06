@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 
 const Form = () => {
+  
+  const [mensaje, setMensaje] = useState(null);
+  
   const [formData, setformData] = useState({ name: "", email: "" });
+
+
+
 
   function onsubmit(e) {
     e.preventDefault();
@@ -17,6 +23,8 @@ const Form = () => {
       alert("The name should be longer than five letters");
     }
     // alert("done");
+    
+    setMensaje(true);
   }
 
   function onchange({ target }) {
@@ -77,9 +85,9 @@ const Form = () => {
             <br />
             {/* <h2 className={!onsubmit?"":"hidden"} > Gracias {formData.name} , te contactaremos cuanto antes via mail </h2> */}
             <div>
-              <h2>
+              { mensaje === true? <h2>
                 "Thanks {formData.name}, we'll reach back to you via email"
-              </h2>
+              </h2>:""}
               {/* {formData.name.length <= 5 ? (
                 <h2>The name should be longer than five letters</h2>
               ) : (
