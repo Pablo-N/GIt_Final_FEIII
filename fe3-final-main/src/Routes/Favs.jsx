@@ -8,7 +8,7 @@ const Favs = () => {
   const localFavs = getFavFromStorage();
   return (
     <main>
-      <h1>Dentists Favs</h1>
+      
       <div className="cardContainer">
         {localFavs.length
           ? localFavs.map((dentistFav) => (

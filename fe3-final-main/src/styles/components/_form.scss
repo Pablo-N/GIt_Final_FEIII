@@ -39,6 +39,7 @@
     margin-top: 0.7rem;
     display: block;
     transition: all 0.3s;
+    color: $color-black;
   }
 
   &__input:placeholder-shown + &__label {
@@ -62,4 +63,8 @@
     position: relative;
     padding-left: 5rem;
   }
+}
+
+.hidden{
+  display: none;
 }

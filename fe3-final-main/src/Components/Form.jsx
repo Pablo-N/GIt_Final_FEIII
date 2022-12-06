@@ -1,6 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+
+  const formValidation = false;
+
+  const [formData, setformData] = useState({name:"",email:""})
+
+  function onsubmit(e){
+    e.preventDefault()
+
+    if(formData.name<=5){
+      formValidation= false;
+    }
+    formValidation= true;
+    alert("dfff")
+
+
+  }
+
+function onchange({target}) {
+  const value = target.value
+  const name = target.name
+setformData ( {...formData, [name]:value})
+  console.log(formData)
+
+}  
+
+
   //Aqui deberan implementar el form completo con sus validaciones
 
   return (
@@ -8,13 +34,17 @@ const Form = () => {
       <div className="row">
         <div className="book">
           <div className="book__form">
-            <form action="#" className="form">
+            <form action="#" className="form" onSubmit={onsubmit}>
               <div className="u-margin-bottom-medium">
-                <h2 className="heading-secundary">Start booking now</h2>
+                <h2 className="heading-secundary">Want to know more?</h2>
+                <h3>Send us your questions and we will contact you</h3>
+                <br></br>
               </div>
 
               <div className="form__group">
-                <input
+                <input onChange={onchange}
+                  
+                  name="name"
                   type="text"
                   className="form__input"
                   id="name"
@@ -27,7 +57,8 @@ const Form = () => {
               </div>
 
               <div className="form__group">
-                <input
+                <input                  
+                  name="email"
                   type="email"
                   className="form__input"
                   id="email"
@@ -39,10 +70,17 @@ const Form = () => {
                 </label>
               </div>
               <div className="form__group">
-                <button className="btn btn--green">Next Step &rarr;</button>
+                <button type = "submit"  className="btn btn--green">Next Step &rarr;</button>
               </div>
             </form>
+            <br></br>
+            {/* <h2 className={!onsubmit?"":"hidden"} > Gracias {formData.name} , te contactaremos cuanto antes via mail </h2> */}
+            { formValidation?<h2 className={!onsubmit?"":"hidden"} > Gracias {formData.name} , te contactaremos cuanto antes via mail </h2>: alert("The name must be longer than five letters")}
+            <br></br>
+            <br></br>
           </div>
+
+          
         </div>
       </div>
     </div>

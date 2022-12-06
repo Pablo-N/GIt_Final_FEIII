@@ -21,7 +21,7 @@ const Home = () => {
   return (
     //card-grid
     <main>
-      <h1>Home</h1>
+      
       <div className="cardContainer">
         {dentists.map((dentist) => (
           <Card key={dentist.id} dentist={dentist} />

@@ -15,11 +15,15 @@ const Navbar = () => {
   };
 
   return (
-    <header className="navigation">
+    <header className={
+      theme === "theme--light"
+        ? "navigation navigation__light"
+        : "navigation navigation__dark"
+    }>
       <nav className="navigation__container">
-        <Link to="/home">Home</Link>
-        <Link to="/contact">Contact</Link>
-        <Link to="/Favs">Favs</Link>
+        <Link className= "white_letter" to="/home">Home</Link>
+        <Link className= "white_letter" to="/contact">Contact</Link>
+        <Link className= "white_letter" to="/Favs">Favs</Link>
         <label className="switch">
           <input onClick={changeTheme} type="checkbox" />
           <span className="switch__slider round">

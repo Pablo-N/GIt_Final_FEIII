@@ -76,11 +76,9 @@ const Card = ({ dentist }) => {
               )}
             </button>
           </div>
-          <a href="#popup" className="btn btn--white card__btn">
-            Book now!
-          </a>          
+                   
           <Link to={`/dentist/${id}`} className="btn btn--white card__btn">
-            Show more details
+            Show more
           </Link>         
 
         </div>
