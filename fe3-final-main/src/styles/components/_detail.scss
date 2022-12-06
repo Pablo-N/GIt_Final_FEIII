@@ -1,0 +1,26 @@
+.dentisttable{
+    font-size: $table-font-size;
+    font-family: inherit;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: $gutter-vertical;
+    margin-bottom: $gutter-vertical;
+    
+  td{
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  th{
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /*background-color: #04AA6D;*/
+   background-image:  linear-gradient(to right, $color-tertiary-dark, $color-tertiary-light);
+    color: white;
+  }
+  tr:nth-child(even){background-color: #f2f2f2;}
+  tr:hover {background-color: #ddd;}
+  }
+

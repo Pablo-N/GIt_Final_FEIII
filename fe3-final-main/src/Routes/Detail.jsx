@@ -24,14 +24,17 @@ const Detail = () => {
 
   return (
     <>
-      <h1>Detail Dentist {id} </h1>
+      
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
 
 {
 dentista ?
-<section>
-        <table>
+
+
+
+        <table className='dentisttable'>
+          <h1>Detail Dentist ID: {id} </h1>
           <tr>
             <th>Name</th>
             <th>Email</th>
@@ -45,7 +48,8 @@ dentista ?
             <td>{dentista.website}</td>
           </tr>
         </table>
-        </section>
+        
+        
 :null
 }
 
@@ -55,3 +59,5 @@ dentista ?
 }
 
 export default Detail
+
+
