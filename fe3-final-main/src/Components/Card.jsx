@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { ThemeContext } from "./utils/globalContext";
 import {
+  getFavFromStorage,
   isFavorited,
   removeFavInStorage,
   setFavInStorage,
@@ -10,18 +11,18 @@ import {
 
 import { Link } from "react-router-dom";
 
-
-
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
-  const { theme } = useContext(ThemeContext);
+  const { theme, setData } = useContext(ThemeContext);
 
   const addFav = () => {
     setFavInStorage({ name, username, id });
+    setData(getFavFromStorage());
   };
 
   const removeFav = () => {
     removeFavInStorage(id);
+    setData(getFavFromStorage());
   };
 
   const favorite = isFavorited(id);
@@ -69,18 +70,13 @@ const Card = ({ dentist }) => {
               }
               onClick={favorite ? removeFav : addFav}
             >
-              {favorite ? (
-                <FontAwesomeIcon icon={faXmark} />
-              ) : (
-                <FontAwesomeIcon icon={faStar} />
-              )}
+              <FontAwesomeIcon icon={faStar} />
             </button>
           </div>
-                   
+
           <Link to={`/dentist/${id}`} className="btn btn--white card__btn">
             Show more
-          </Link>         
-
+          </Link>
         </div>
       </div>
 

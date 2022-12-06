@@ -58,7 +58,7 @@ export const GlobalContext = (props) => {
   );
 
   return (
-    <ThemeContext.Provider className={themeState.theme} value={providerState}>
+    <ThemeContext.Provider value={providerState}>
       <div className={themeState.theme}>{props.children}</div>
     </ThemeContext.Provider>
   );

@@ -203,6 +203,11 @@
         2% 35%,
         39% 35%
       );
+
+      &:active {
+        background-color: $color-secondary-light;
+        color: $color-secondary-light;
+      }
     }
 
     &--Nofav {
@@ -226,6 +231,11 @@
         80% 0%,
         50% 30%
       );
+
+      &:active {
+        background-color: #f21d1d;
+        color: #f21d1d;
+      }
     }
 
     &:hover {
@@ -233,10 +243,10 @@
       box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     }
 
-    &:active {
-      background-color: $color-secondary-light;
-      color: $color-secondary-light;
-    }
+    // &:active {
+    //   background-color: $color-secondary-light;
+    //   color: $color-secondary-light;
+    // }
   }
 
   &__btn {
