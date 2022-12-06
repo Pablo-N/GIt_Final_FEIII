@@ -8,6 +8,10 @@ import {
   setFavInStorage,
 } from "./utils/localStorageHandle";
 
+import { Link } from "react-router-dom";
+
+
+
 const Card = ({ dentist }) => {
   const { name, username, id } = dentist;
   const { theme } = useContext(ThemeContext);
@@ -74,10 +78,11 @@ const Card = ({ dentist }) => {
           </div>
           <a href="#popup" className="btn btn--white card__btn">
             Book now!
-          </a>
-          <a href="#popup" className="btn btn--white card__btn">
+          </a>          
+          <Link to={`/dentist/${id}`} className="btn btn--white card__btn">
             Show more details
-          </a>
+          </Link>         
+
         </div>
       </div>
 
