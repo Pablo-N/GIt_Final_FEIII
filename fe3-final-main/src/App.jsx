@@ -5,9 +5,6 @@ import { useContext, useEffect } from "react";
 import { GlobalContext, ThemeContext } from "./Components/utils/globalContext";
 
 function App(props) {
-  const { themeState } = useContext(ThemeContext);
-  console.log("Desde App:", themeState);
-
   const location = useLocation();
   const navigate = useNavigate();
 

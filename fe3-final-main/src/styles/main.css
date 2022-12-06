@@ -607,6 +607,9 @@ input:checked + .switch__slider:before {
 .white_letter {
   color: #fff;
 }
+.white_letter:focus {
+  color: #ffb900;
+}
 
 footer {
   display: flex;
