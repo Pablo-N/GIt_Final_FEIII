@@ -1,4 +1,4 @@
-import { createContext, useMemo, useReducer } from "react";
+import { createContext, useMemo, useReducer,useEffect } from "react";
 
 export const initialTheme = { theme: "theme--light", data: [] };
 export const ThemeContext = createContext(initialTheme);
@@ -39,16 +39,7 @@ export const GlobalContext = (props) => {
 
       setDarkTheme: () => {
         themeDispacher({ type: actions.THEME__DARK });
-      },
-
-      // switchTheme: () => {
-      //   if (themeState.theme === "them--dark") {
-      //     themeDispacher({ type: actions.THEME__LIGHT });
-      //   }
-      //   if (themeState.theme === "them--light") {
-      //     themeDispacher({ type: actions.THEME__DARK });
-      //   }
-      // },
+      },  
 
       setData: (array) => {
         themeDispacher({ type: actions.DATA, payload: array });
@@ -56,6 +47,19 @@ export const GlobalContext = (props) => {
     }),
     [themeState, themeDispacher]
   );
+
+
+  const handleFetchRequest = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const jsonResponse = await response.json();
+    providerState.setData(jsonResponse);
+  };
+
+  useEffect(() => {
+    handleFetchRequest();
+  }, [providerState]);
+
+
 
   return (
     <ThemeContext.Provider value={providerState}>

@@ -21,10 +21,12 @@ const Form = () => {
 
     if (formData.name.length <= 5) {
       alert("The name should be longer than five letters");
+      
     }
+    else{setMensaje(true);}
     // alert("done");
     
-    setMensaje(true);
+    
   }
 
   function onchange({ target }) {

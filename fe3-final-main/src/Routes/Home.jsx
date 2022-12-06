@@ -1,22 +1,21 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Card from "../Components/Card";
+
+import { ThemeContext } from "../Components/utils/globalContext";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  //const [dentists , setDentists] = React.useState([]);
+  
+const [dentists, setDentists] = useState([]);
 
-  const [dentists, setDentists] = useState([]);
+ const {data} = useContext(ThemeContext) 
 
-  const handleFetchRequest = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    const jsonResponse = await response.json();
-    setDentists([...jsonResponse]);
-  };
+ useEffect(()=>{
+  
+ setDentists(data)
 
-  useEffect(() => {
-    handleFetchRequest();
-  }, []);
+ });
 
   return (
     //card-grid
