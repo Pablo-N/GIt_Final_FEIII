@@ -11,22 +11,11 @@ const Form = () => {
 
   function onsubmit(e) {
     e.preventDefault();
-    // if (formData.name.length <= 5) {
-    //   return <h2>The name should be longer than five letters </h2>;
-    // } else {
-    //   return (
-    //     <h2>Thanks {formData.name}, we'll reach back to you via email </h2>
-    //   );
-    // }
-
-    if (formData.name.length <= 5) {
+    if (formData.name.trim().length <= 5) {
       alert("The name should be longer than five letters");
       
     }
-    else{setMensaje(true);}
-    // alert("done");
-    
-    
+    else{setMensaje(true);}    
   }
 
   function onchange({ target }) {
@@ -85,18 +74,10 @@ const Form = () => {
               </div>
             </form>
             <br />
-            {/* <h2 className={!onsubmit?"":"hidden"} > Gracias {formData.name} , te contactaremos cuanto antes via mail </h2> */}
             <div>
               { mensaje === true? <h2>
                 "Thanks {formData.name}, we'll reach back to you via email"
               </h2>:""}
-              {/* {formData.name.length <= 5 ? (
-                <h2>The name should be longer than five letters</h2>
-              ) : (
-                <h2>
-                  "Thanks {formData.name}, we'll reach back to you via email"
-                </h2>
-              )} */}
             </div>
             <br />
             <br />

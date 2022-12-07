@@ -71,24 +71,6 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
-    &--1 {
-      background-image: linear-gradient(
-        to right bottom,
-        $color-secondary-light,
-        $color-secondary-dark
-      );
-      // url("../../../public/images/doctor.jpg");
-    }
-
-    &--2 {
-      background-image: linear-gradient(
-        to right bottom,
-        $color-primary-light,
-        $color-primary-dark
-      );
-      // url("../../../public/images/doctor.jpg");
-    }
-
     &--3 {
       background-image: linear-gradient(
           to right bottom,
@@ -115,21 +97,7 @@
     padding: 1rem 1.5rem; // 1rem 1.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    &--1 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-secondary-light, 0.85),
-        rgba($color-secondary-dark, 0.85)
-      );
-    }
 
-    &--2 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-primary-light, 0.85),
-        rgba($color-primary-dark, 0.85)
-      );
-    }
     &--3 {
       background-image: linear-gradient(
         to right bottom,
@@ -242,11 +210,6 @@
       transform: translateY(-3px);
       box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
     }
-
-    // &:active {
-    //   background-color: $color-secondary-light;
-    //   color: $color-secondary-light;
-    // }
   }
 
   &__btn {

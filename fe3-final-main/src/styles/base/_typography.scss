@@ -1,7 +1,6 @@
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7;
   color: $color-grey-dark;
   padding: 3rem;
@@ -23,10 +22,6 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1.2s;
     animation-timing-function: ease-out;
-
-    /* animation-delay: 3s; 
-         animation-iteration-count: 3;
-         */
   }
 
   &--sub {
@@ -36,9 +31,6 @@ body {
     letter-spacing: 1.75rem;
 
     animation: moveInRight 1.2s ease-out;
-    /* animation-name: moveInRight;
-         animation-duration: 2s;
-         animation-timing-function: ease-out; */
   }
 }
 

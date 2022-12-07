@@ -67,16 +67,3 @@ export const GlobalContext = (props) => {
     </ThemeContext.Provider>
   );
 };
-
-/*   const [themeState, setThemeState] = useState("theme--light");
-
-  const switchTheme = () => {
-    if (themeState === "theme--light") {
-      const newThemeState = "theme--dark";
-      setThemeState(newThemeState);
-    }
-    if (themeState === "theme--dark") {
-      const newThemeState = "theme--light";
-      setThemeState(newThemeState);
-    }
-  }; */
