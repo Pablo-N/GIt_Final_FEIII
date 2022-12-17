@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.aae49ccd.css",
-    "main.js": "/static/js/main.66463cb8.js",
+    "main.js": "/static/js/main.44e07a81.js",
     "static/media/doctor.jpg": "/static/media/doctor.eb13e855073291c62b00.jpg",
     "static/media/Dentist.jpg": "/static/media/Dentist.33fa9f3a03f1e1fde097.jpg",
     "index.html": "/index.html",
     "main.aae49ccd.css.map": "/static/css/main.aae49ccd.css.map",
-    "main.66463cb8.js.map": "/static/js/main.66463cb8.js.map"
+    "main.44e07a81.js.map": "/static/js/main.44e07a81.js.map"
   },
   "entrypoints": [
     "static/css/main.aae49ccd.css",
-    "static/js/main.66463cb8.js"
+    "static/js/main.44e07a81.js"
   ]
 }

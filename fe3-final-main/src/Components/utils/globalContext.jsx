@@ -57,7 +57,7 @@ export const GlobalContext = (props) => {
 
   useEffect(() => {
     handleFetchRequest();
-  }, [providerState]);
+  }, []);
 
 
 
